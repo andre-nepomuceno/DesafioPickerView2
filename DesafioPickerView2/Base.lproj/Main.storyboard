@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,83 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioPickerView2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qzf-fC-Nsc">
+                                <rect key="frame" x="0.0" y="144" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8R-6u-DGc">
+                                <rect key="frame" x="16" y="440" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="GM2-UU-UKb"/>
+                                    <constraint firstAttribute="height" constant="96" id="m4B-pq-ey8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Cancelar">
+                                    <backgroundConfiguration key="background" cornerRadius="58"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelarClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oVb-iL-KR2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6Q-5F-utS">
+                                <rect key="frame" x="8" y="560" width="398" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TL-TB-j2R">
+                                <rect key="frame" x="302" y="440" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="vKI-9g-xOh"/>
+                                    <constraint firstAttribute="height" constant="96" id="xGN-TV-Vbc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Iniciar" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="48"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="iniciarClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G9I-fz-SDg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qzf-fC-Nsc" secondAttribute="trailing" id="6Zb-l0-mGo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6Q-5F-utS" secondAttribute="trailing" constant="8" id="7xh-gD-Gr8"/>
+                            <constraint firstItem="u6Q-5F-utS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8xv-fW-pWq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5TL-TB-j2R" secondAttribute="trailing" constant="16" id="HbI-zE-SDb"/>
+                            <constraint firstItem="u6Q-5F-utS" firstAttribute="top" secondItem="Qzf-fC-Nsc" secondAttribute="bottom" constant="200" id="avt-CL-rJp"/>
+                            <constraint firstItem="u6Q-5F-utS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="eNr-Il-p2I"/>
+                            <constraint firstItem="5TL-TB-j2R" firstAttribute="top" secondItem="Qzf-fC-Nsc" secondAttribute="bottom" constant="80" id="fds-Cm-mqr"/>
+                            <constraint firstItem="a8R-6u-DGc" firstAttribute="top" secondItem="Qzf-fC-Nsc" secondAttribute="bottom" constant="80" id="lMo-ND-rbv"/>
+                            <constraint firstItem="Qzf-fC-Nsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nHW-Lz-vSr"/>
+                            <constraint firstItem="Qzf-fC-Nsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="rLg-nO-M8Z"/>
+                            <constraint firstItem="a8R-6u-DGc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ufH-Zo-oRg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cronometroPickerView" destination="Qzf-fC-Nsc" id="wID-NV-3dl"/>
+                        <outlet property="horarioLabel" destination="u6Q-5F-utS" id="mLm-io-1FN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="30" y="70"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
